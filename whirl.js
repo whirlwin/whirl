@@ -1,6 +1,5 @@
 var whirl = (function() {
-
-  "use strict"
+  "use strict";
 
   function ns(namespace) {
     if (namespace == undefined) {
