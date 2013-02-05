@@ -13,7 +13,6 @@ Getting started
 2. Add it to your project
 
 3. Create a class
-
 >     whirl.newClass('my.own.namespace', function() {
 >
 >       // Private functions
@@ -25,6 +24,7 @@ Getting started
 >       // Expose only public functions
 >       return { getBar: getBar };
 >     });
+
 4. Test your class
 
 >     my.own.namespace.getBar(); // Returns 'bar'
