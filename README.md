@@ -12,12 +12,15 @@ Getting started
 
 2. Create a class
 
-    whirl.newClass('my.own.namespace', function() {
 
-      // Create methods to expose
-      function getGreeting() {
-        return 'Hello!';
-      }
+>     whirl.newClass('my.own.namespace', function() {
 
-      return { getGreeting: getGreeting };
-    }
+>       // Private functions
+>       function getFoo() { return 'foo'; }
+>
+>       // Public functions
+>       function getBar() { return 'bar'; }
+>
+>       // Expose only public functions
+>       return { getBar: getBar };
+>     }
