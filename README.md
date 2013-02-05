@@ -25,7 +25,7 @@ Getting started
 >
 >       // Expose only public functions
 >       return { getBar: getBar };
->     }
+>     });
 
 Rationale
 ---------
