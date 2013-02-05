@@ -32,8 +32,7 @@ Rationale
 - **Q:** Why do I need a namespace?
 
  - **A:** To avoid overwriting other functions unintentionally
-
-
+  
 - **Q:** Why differentiate between so called public and private functions?
 
  - **A:** To clearly determine which are the core functions
