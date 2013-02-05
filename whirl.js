@@ -3,15 +3,16 @@ var whirl = (function() {
 
   function newClass(namespace, body) {
     if (checkArguments(namespace, body)) {
-      // Validates
+      createClass(namespace, body);
     }
   }
 
   function checkArguments(namespace, body) {
     var valid = true;
 
-
+    //
     // Local functions ---------------------------------------------------------
+    //
 
     function invalidate(message) {
       valid = false;
@@ -28,23 +29,9 @@ var whirl = (function() {
       }
     }
 
-    function createClass(namespace) {
-      var identifiers = namespace.split('.');
-
-      window[identifiers[0]] = (function createObject(array) {
-        if(array.length == 0) {
-          return body();
-
-        } else {
-          var obj = {};
-          obj[array[0]] = createObject(array.splice(1));
-          return obj;
-        }
-      })(identifiers);
-    }
-
-
-    // Checking ----------------------------------------------------------------
+    //
+    // Validation --------------------------------------------------------------
+    //
 
     if (namespace == undefined || body == undefined) {
       invalidate('Invalid arguments. The syntax for invoking newClass is: ' +
@@ -53,10 +40,6 @@ var whirl = (function() {
 
     else {
       checkNamespace(namespace);
-
-      if (valid) {
-        createClass(namespace);
-      }
     }
 
     return valid;
@@ -66,4 +49,20 @@ var whirl = (function() {
     newClass: newClass
   }
 
+  // Recursively creates the objects based on the namespace and exposes
+  // the functionality returned from the method body.
+  function createClass(namespace, body) {
+    var identifiers = namespace.split('.');
+
+    window[identifiers[0]] = (function createObject(array) {
+      if(array.length == 0) {
+        return body();
+
+      } else {
+        var obj = {};
+        obj[array[0]] = createObject(array.splice(1));
+        return obj;
+      }
+    })(identifiers);
+  }
 })();
