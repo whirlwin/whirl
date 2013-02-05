@@ -14,9 +14,8 @@ Getting started
 
 3. Create a class
 
-
 >     whirl.newClass('my.own.namespace', function() {
-
+>
 >       // Private functions
 >       function getFoo() { return 'foo'; }
 >
