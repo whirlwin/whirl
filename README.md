@@ -25,7 +25,6 @@ Getting started
 >       // Expose only public functions
 >       return { getBar: getBar };
 >     });
-
 4. Test your class
 
 >     my.own.namespace.getBar(); // Returns 'bar'
