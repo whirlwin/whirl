@@ -27,6 +27,10 @@ Getting started
 >       return { getBar: getBar };
 >     });
 
+4. Test your class
+
+>     my.own.namespace.getBar(); # => 'bar'
+
 Rationale
 ---------
 - **Q:** Why do I need a namespace?
