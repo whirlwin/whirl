@@ -33,14 +33,14 @@ var whirl = (function() {
 
       window[identifiers[0]] = (function createObject(array) {
         if(array.length == 0) {
-          return body;
+          return body();
 
-          } else {
-            var obj = {};
-            obj[array[0]] = createObject(array.splice(1));
-            return obj;
-          }
-        })(identifiers);
+        } else {
+          var obj = {};
+          obj[array[0]] = createObject(array.splice(1));
+          return obj;
+        }
+      })(identifiers);
     }
 
 
